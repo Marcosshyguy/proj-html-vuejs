@@ -15,6 +15,10 @@ export const store = {
             status:false   
         },
         { 
+            name:'Latest News',
+            status:false   
+        },
+        { 
             name:'Albums',
             status:false   
         },

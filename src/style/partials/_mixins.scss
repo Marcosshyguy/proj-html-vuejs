@@ -1,0 +1,10 @@
+@mixin btn {
+    color :white;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    padding: .5rem 1em;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 2px;
+    cursor: pointer;
+}
