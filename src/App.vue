@@ -1,6 +1,7 @@
 <script>
 import { store } from "./store";
 import AppHeader from "./components/AppHeader.vue";
+import AppGridBandNews from "./components/AppGridBandNews.vue";
 
 export default {
   data() {
@@ -32,6 +33,7 @@ export default {
   },
   components: {
     AppHeader,
+    AppGridBandNews,
   },
   methods: {},
   props: {},
@@ -41,7 +43,7 @@ export default {
 </script>
 
 <template>
-  <!-- transparent header with a jubo below it and an effect on the button on the right taht displays  a menu with several links -->
+  <!-- transparent header with a jumbo below it and an effect on the button on the right taht displays  a menu with several links -->
   <header>
     <AppHeader />
   </header>
@@ -50,7 +52,9 @@ export default {
 NEED TO ASK IF THE RED SECTION  MUST DO SOMETHIMG?, 3 another normal section with  bg images, fourth section that shows the most recent 
 concert and for each date there is the possibilitY to view more details about plus the chanse to join that concert with a button,
 NEED TO ASK IF THE RED BAR HAS TO SHOW MORE DATES-->
-  <main></main>
+  <main>
+    <AppGridBandNews />
+  </main>
 
   <!-- it seems a normal footer but with the same links of the header -->
   <footer></footer>

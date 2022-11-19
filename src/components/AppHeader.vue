@@ -112,6 +112,9 @@ export default {
   .jumbotron {
     height: 800px;
     position: relative;
+    p {
+      font-size: 1rem;
+    }
 
     img {
       object-fit: fill;
