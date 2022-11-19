@@ -6,11 +6,24 @@ export default {
     return {
       store,
       openedMenu: false,
+      currentBtnPosition: 0,
+      jumboButtons: [
+        { status: true, name: "Latest Album" },
+        {
+          status: false,
+          name: "Live Dates",
+        },
+      ],
     };
   },
   methods: {
     changeMenuStatus() {
       this.openedMenu = !this.openedMenu;
+    },
+    changeBtnStatus(index) {
+      this.jumboButtons[this.currentBtnPosition].status = false;
+      this.currentBtnPosition = index;
+      this.jumboButtons[this.currentBtnPosition].status = true;
     },
   },
   props: {
@@ -20,7 +33,7 @@ export default {
   created() {},
 };
 </script>
-
+<!-- fix link status link -->
 <template>
   <div class="header-container">
     <!-- fixed navbar -->
@@ -36,6 +49,7 @@ export default {
         ><i class="fa-solid fa-xmark" @click="changeMenuStatus"></i
       ></span>
     </div>
+
     <!-- jumbotron -->
     <div class="jumbotron">
       <img src="../assets/images/home_slider.jpg" alt="" />
@@ -43,10 +57,17 @@ export default {
         <h1>Untold Stories</h1>
         <p><em>There is an untold story behind every favourite song</em></p>
         <div class="mgt-2">
-          <button>latest album</button>
-          <button>live dates</button>
+          <button
+            v-for="(btn, btnIndex) in jumboButtons"
+            :key="btnIndex"
+            :class="btn.status ? 'active' : ''"
+            @click="changeBtnStatus(btnIndex)"
+          >
+            {{ btn.name }}
+          </button>
         </div>
       </div>
+
       <!-- menu list that is activated by the humburger menu icon in the header -->
       <div class="jumbo-menu" v-if="openedMenu">
         <ul>
@@ -78,19 +99,18 @@ export default {
     z-index: 999;
     top: 5px;
     left: 0;
-
     i {
       cursor: pointer;
-      // debug
+      color: $font-color1;
+      font-size: 1.3rem;
       &:hover {
-        // debug
         color: grey;
       }
     }
   }
 
   .jumbotron {
-    height: 700px;
+    height: 800px;
     position: relative;
 
     img {
@@ -111,11 +131,21 @@ export default {
       button {
         @include btn;
         margin-right: 1em;
-        transition: 1s all;
+        transition: 0.5s all ease-in-out;
 
-        &:hover {
+        &.active {
           background-color: $secondary-color1;
           border: none;
+        }
+
+        &:hover {
+          background-color: white;
+          color: black;
+          border: 1px solid black;
+        }
+
+        &:active {
+          opacity: 90%;
         }
       }
     }
