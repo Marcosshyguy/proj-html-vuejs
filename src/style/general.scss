@@ -17,9 +17,20 @@ html{
 
 h1,h2,h3,h4,h5,h6{
     font-family: 'Montserrat', sans-serif;
+
+}
+
+h1{
     font-size: 6rem;
 }
 
+h2{
+    font-size: 3rem;
+}
+
+p{
+    font-size: .7rem;
+}
 ///////////////////////////////////////
 // commons
 /////////////////////////////////
@@ -38,9 +49,17 @@ a{
 }
 
 .main-container {
-    width: 70%;
+    width: 55%;
     margin: 0 auto;
 }
+
+.title-container{
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;  
+}
+
+
 ///////////////////////////////
 
 // sizing

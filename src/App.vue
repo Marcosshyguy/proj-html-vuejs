@@ -2,7 +2,7 @@
 import { store } from "./store";
 import AppHeader from "./components/AppHeader.vue";
 import AppGridBandNews from "./components/AppGridBandNews.vue";
-
+import AppFirstSection from "./components/AppFirstSection.vue";
 export default {
   data() {
     return {
@@ -34,6 +34,7 @@ export default {
   components: {
     AppHeader,
     AppGridBandNews,
+    AppFirstSection,
   },
   methods: {},
   props: {},
@@ -53,6 +54,7 @@ NEED TO ASK IF THE RED SECTION  MUST DO SOMETHIMG?, 3 another normal section wit
 concert and for each date there is the possibilitY to view more details about plus the chanse to join that concert with a button,
 NEED TO ASK IF THE RED BAR HAS TO SHOW MORE DATES-->
   <main>
+    <AppFirstSection />
     <AppGridBandNews />
   </main>
 

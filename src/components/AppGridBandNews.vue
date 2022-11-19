@@ -1,13 +1,14 @@
 <script>
 import { store } from "../store";
-
+import AppTitle from "./AppTitle.vue";
 export default {
   data() {
     return {
       store,
+      titleSection: "Latest Band News",
     };
   },
-  components: {},
+  components: { AppTitle },
   methods: {},
   props: {},
   computed: {},
@@ -17,19 +18,11 @@ export default {
 
 <template>
   <div class="main-container">
-    <div class="title-container">
-      <h2>Latest Band News</h2>
-      <!-- linea  -->
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero obcaecati
-        ipsa Praesentium velit, nobis amet sit asperiores similique quo sequi
-        ducimus.
-      </p>
-    </div>
+    <AppTitle :title="titleSection" />
     <div class="grid">
       <div class="grid-left-side">
         <div class="card">
-          <img src="../assets/images/blog_music_techo-800x400.jpg" alt="" />
+          <img src="../assets/images/blog_music_techo-400x200.jpg" alt="" />
         </div>
         <div class="card-flex">
           <div class="card">
@@ -71,13 +64,19 @@ export default {
     width: 66%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
     gap: 1em;
 
     .card:first-child,
     .card:last-child {
       height: calc(100% / 4 - 1em);
       border: 1px solid black;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
 
     .card-flex {
@@ -88,11 +87,12 @@ export default {
       .card {
         width: calc(100% / 2);
         height: 100%;
-        // img {
-        //   width: 100%;
-        //   height: 100%;
-        //   object-fit: fill;
-        // }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
     }
   }
@@ -108,12 +108,13 @@ export default {
     .card {
       height: calc(100% / 2);
       border: 1px solid black;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
-  }
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
   }
 }
 </style>

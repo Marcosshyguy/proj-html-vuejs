@@ -69,7 +69,7 @@ export default {
       </div>
 
       <!-- menu list that is activated by the humburger menu icon in the header -->
-      <div class="jumbo-menu" v-if="openedMenu">
+      <div class="jumbo-menu" v-if="openedMenu" @click="changeMenuStatus">
         <ul>
           <li v-for="(link, indexLink) in store.linksArray" :key="indexLink">
             {{ link.name }}
@@ -95,7 +95,7 @@ export default {
     justify-content: space-between;
     align-items: center;
 
-    position: fixed;
+    position: absolute;
     z-index: 999;
     top: 5px;
     left: 0;
