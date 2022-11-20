@@ -20,7 +20,24 @@ export default {
   <div class="wrapper">
     <div class="main-container">
       <AppTitle :title="titleSection" />
-
+      <!-- grid version -->
+      <div class="grid">
+        <div class="card-news">
+          <div class="image">
+            <p>Tecnology and music</p>
+          </div>
+          <div class="description">
+            <h5>title</h5>
+            <p>sacasfd</p>
+          </div>
+        </div>
+        <div class="card-news"></div>
+        <div class="card-news"></div>
+        <div class="card-news"></div>
+        <div class="card-news"></div>
+        <div class="card-news"></div>
+      </div>
+      <!-- flexbox version -->
       <!-- <div class="grid">
         <div class="grid-left-side">
           <div class="card">
@@ -54,70 +71,161 @@ export default {
 <style lang="scss" scoped>
 @use "../style/partials/variables" as *;
 @use "../style/partials/mixins" as *;
-.grid {
-  height: 90vh;
-  width: 100%;
-  display: flex;
-  margin: 0 auto;
-  gap: 1em;
+// grid methods
+.wrapper {
+  background-color: $main-bg1;
+  .grid {
+    height: 80vh;
+    margin-top: 3em;
+    display: grid;
+    // set how many colums and row i want
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    .card-news {
+      // debug
+      border: 1px solid white;
+      overflow: hidden;
 
-  //   leftside
-  .grid-left-side {
-    height: 100%;
-    width: 66%;
-    display: flex;
-    flex-direction: column;
-
-    gap: 1em;
-
-    .card:first-child,
-    .card:last-child {
-      height: calc(100% / 4 - 1em);
-      border: 1px solid black;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      &:nth-child(1),
+      &:nth-child(6) {
+        grid-row: span 1;
+        grid-column: span 2;
       }
-    }
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5) {
+        grid-row: span 2;
+        grid-column: span 1;
+      }
+      &:nth-child(1) {
+        .image {
+          height: 65%;
+          background-image: url("../assets/images/blog_music_techo-400x200.jpg");
+          background-size: cover;
+          background-position: center;
+          transition: all 2s;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
 
-    .card-flex {
-      flex-grow: 1;
-      border: 1px solid black;
-      display: flex;
-      gap: 1em;
-      .card {
-        width: calc(100% / 2);
-        height: 100%;
+          &::before {
+            content: "";
+            display: block;
+            background-color: $secondary-color1;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            transition: opacity 2s;
+          }
 
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+          p {
+            color: white;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.8rem;
+            opacity: 0;
+            z-index: 1;
+            transition: opacity 3s;
+          }
+        }
+
+        .description {
+          height: 35%;
+          padding: 0.4rem;
+          background-color: $main-bg2;
+          transition: all 2s;
         }
       }
-    }
-  }
-  //   right-side
-  .grid-right-side {
-    border: 1px solid black;
-    height: 100%;
-    width: 33%;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+      &:hover .description {
+        height: 0%;
+      }
 
-    .card {
-      height: calc(100% / 2);
-      border: 1px solid black;
-
-      img {
-        width: 100%;
+      &:hover .image {
         height: 100%;
-        object-fit: cover;
+      }
+
+      &:hover .image::before {
+        opacity: 0.5;
+      }
+
+      &:hover .image p {
+        opacity: 1;
       }
     }
   }
 }
+// flexbox methods
+// .grid {
+//   height: 90vh;
+//   width: 100%;
+//   display: flex;
+//   margin: 0 auto;
+//   gap: 1em;
+
+//   //   leftside
+//   .grid-left-side {
+//     height: 100%;
+//     width: 66%;
+//     display: flex;
+//     flex-direction: column;
+
+//     gap: 1em;
+
+//     .card:first-child,
+//     .card:last-child {
+//       height: calc(100% / 4 - 1em);
+//       border: 1px solid black;
+
+//       img {
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//       }
+//     }
+
+//     .card-flex {
+//       flex-grow: 1;
+//       border: 1px solid black;
+//       display: flex;
+//       gap: 1em;
+//       .card {
+//         width: calc(100% / 2);
+//         height: 100%;
+
+//         img {
+//           width: 100%;
+//           height: 100%;
+//           object-fit: cover;
+//         }
+//       }
+//     }
+//   }
+//   //   right-side
+//   .grid-right-side {
+//     border: 1px solid black;
+//     height: 100%;
+//     width: 33%;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1em;
+
+//     .card {
+//       height: calc(100% / 2);
+//       border: 1px solid black;
+
+//       img {
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//       }
+//     }
+//   }
+// }
 </style>
