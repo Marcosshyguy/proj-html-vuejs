@@ -52,7 +52,7 @@ export default {
 
     <!-- jumbotron -->
     <div class="jumbotron">
-      <img src="../assets/images/home_slider.jpg" alt="" />
+      <img src="../assets/images/home_slider.jpg" alt="home-slider" />
       <div class="jumbo-title">
         <h1>Untold Stories</h1>
         <p><em>There is an untold story behind every favourite song</em></p>
@@ -113,7 +113,7 @@ export default {
     height: 800px;
     position: relative;
     p {
-      font-size: 1rem;
+      @include aforism;
     }
 
     img {

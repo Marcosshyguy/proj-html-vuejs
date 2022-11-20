@@ -3,6 +3,7 @@ import { store } from "./store";
 import AppHeader from "./components/AppHeader.vue";
 import AppGridBandNews from "./components/AppGridBandNews.vue";
 import AppFirstSection from "./components/AppFirstSection.vue";
+import AppVideoThumbSectionVue from "./components/AppVideoThumbSection.vue";
 export default {
   data() {
     return {
@@ -35,6 +36,7 @@ export default {
     AppHeader,
     AppGridBandNews,
     AppFirstSection,
+    AppVideoThumbSectionVue,
   },
   methods: {},
   props: {},
@@ -56,6 +58,7 @@ NEED TO ASK IF THE RED BAR HAS TO SHOW MORE DATES-->
   <main>
     <AppFirstSection />
     <AppGridBandNews />
+    <AppVideoThumbSectionVue />
   </main>
 
   <!-- it seems a normal footer but with the same links of the header -->

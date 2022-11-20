@@ -9,3 +9,20 @@
     border-radius: 2px;
     cursor: pointer;
 }
+
+@mixin center-positioning{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin aforism {
+    font-size: 1rem;
+    font-weight: 700;
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+    line-height: 1.7rem;
+    letter-spacing: 1px;
+}

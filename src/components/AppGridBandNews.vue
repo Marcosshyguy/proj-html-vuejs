@@ -17,33 +17,36 @@ export default {
 </script>
 
 <template>
-  <div class="main-container">
-    <AppTitle :title="titleSection" />
-    <div class="grid">
-      <div class="grid-left-side">
-        <div class="card">
-          <img src="../assets/images/blog_music_techo-400x200.jpg" alt="" />
-        </div>
-        <div class="card-flex">
+  <div class="wrapper">
+    <div class="main-container">
+      <AppTitle :title="titleSection" />
+
+      <!-- <div class="grid">
+        <div class="grid-left-side">
           <div class="card">
-            <img src="../assets/images/blog-post3-600x900.jpg" alt="" />
+            <img src="../assets/images/blog_music_techo-400x200.jpg" alt="" />
+          </div>
+          <div class="card-flex">
+            <div class="card">
+              <img src="../assets/images/blog-post3-600x900.jpg" alt="" />
+            </div>
+            <div class="card">
+              <img src="../assets/images/blog-post4-400x600.jpg" alt="" />
+            </div>
           </div>
           <div class="card">
-            <img src="../assets/images/blog-post4-400x600.jpg" alt="" />
+            <img src="../assets/images/blog_flavor_rock-200x100.jpg" alt="" />
           </div>
         </div>
-        <div class="card">
-          <img src="../assets/images/blog_flavor_rock-200x100.jpg" alt="" />
+        <div class="grid-right-side">
+          <div class="card">
+            <img src="../assets/images/blog-post1-400x600.jpg" alt="" />
+          </div>
+          <div class="card">
+            <img src="../assets/images/blog-post2-400x600.jpg" alt="" />
+          </div>
         </div>
-      </div>
-      <div class="grid-right-side">
-        <div class="card">
-          <img src="../assets/images/blog-post1-400x600.jpg" alt="" />
-        </div>
-        <div class="card">
-          <img src="../assets/images/blog-post2-400x600.jpg" alt="" />
-        </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
