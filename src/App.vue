@@ -30,6 +30,38 @@ export default {
           status: false,
         },
       ],
+      newsArray: [
+        {
+          title: "Tecnology and Music",
+          text: "loremlorem lorem loem",
+          image: "blog_music_techo-400x200.jpg",
+        },
+        {
+          title: "Taking it back to the old school",
+          text: "loremlorem lorem loem",
+          image: "blog-post1-400x600.jpg",
+        },
+        {
+          title: "While my guitar gently weeps",
+          text: "loremlorem lorem loem loremlorem loloremlorem lo",
+          image: "blog-post3-400x600.jpg",
+        },
+        {
+          title: "It just sounds better",
+          text: "loremlorem lorem loem loremlorem loloremlorem lo",
+          image: "blog-post4-400x600.jpg",
+        },
+        {
+          title: "Sharing the stage with legend",
+          text: "loremlorem lorem loem loremlorem loloremlorem lo",
+          image: "blog-post2-400x600.jpg",
+        },
+        {
+          title: "Sharing the stage with legend",
+          text: "loremlorem lorem loem loremlorem loloremlorem lo",
+          image: "blog_flavor_rock-400x200.jpg",
+        },
+      ],
     };
   },
   components: {
@@ -57,7 +89,7 @@ concert and for each date there is the possibilitY to view more details about pl
 NEED TO ASK IF THE RED BAR HAS TO SHOW MORE DATES-->
   <main>
     <AppFirstSection />
-    <AppGridBandNews />
+    <AppGridBandNews :newses="newsArray" />
     <AppVideoThumbSectionVue />
   </main>
 
