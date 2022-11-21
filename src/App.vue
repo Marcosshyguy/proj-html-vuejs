@@ -69,28 +69,39 @@ export default {
           when: "17/08/2020",
           where: "Analakia, Gerogia",
           what: "Gem Festival 2020",
+          status: false,
+          book: "notBooked",
         },
         {
           when: "24/9/2020",
           where: "Dominical Republic",
           what: "Groovefest",
+          status: false,
+          book: "notBooked",
         },
         {
           when: "31/10/2020",
           where: "Marrakech, Morocco",
           what: "Oasis Festival 2020",
+          status: false,
+          book: "notBooked",
         },
         {
           when: "07/11/2020",
           where: "Essauria, Morocco",
           what: "Moga Festival -",
+          status: false,
+          book: "notBooked",
         },
         {
           when: "10/12/2020",
           where: "Uvita, Costa Rica",
           what: "Envision Festival -",
+          status: false,
+          book: "notBooked",
         },
       ],
+      currentListPosition: 0,
     };
   },
   components: {
@@ -101,7 +112,15 @@ export default {
     AppFooter,
     AppLiveDatesSection,
   },
-  methods: {},
+  // use this methods to manage the list status according the emit button position
+  // $emit from AppLiveDatesSection
+  methods: {
+    showEvents(index) {
+      this.currentListPosition = index;
+      let currentlistItem = this.liveDatesArray[this.currentListPosition];
+      currentlistItem.status = !currentlistItem.status;
+    },
+  },
   props: {},
   computed: {},
   created() {},
@@ -122,7 +141,10 @@ NEED TO ASK IF THE RED BAR HAS TO SHOW MORE DATES-->
     <AppFirstSection />
     <AppGridBandNews :newses="newsArray" />
     <AppVideoThumbSectionVue />
-    <AppLiveDatesSection :eventsList="liveDatesArray" />
+    <AppLiveDatesSection
+      :eventsList="liveDatesArray"
+      @displayEvent="showEvents"
+    />
   </main>
 
   <!-- it seems a normal footer but with the same links of the header -->
@@ -138,6 +160,6 @@ header,
 main,
 footer {
   width: 100%;
-  max-width: 2000px;
+  // max-width: 2000px;
 }
 </style>

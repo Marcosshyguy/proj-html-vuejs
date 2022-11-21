@@ -22,20 +22,23 @@ export default {
           v-for="(event, eventIndex) in eventsList"
           :key="eventIndex"
         >
-          <div class="event">
+          <div class="event" @click="$emit('displayEvent', eventIndex)">
             <!-- ricordarsi di toglieree span -->
             <p>
-              <span>+</span> {{ event.when }} {{ event.what }} {{ event.where }}
+              <span>+</span>
+              <span>-</span>
+
+              {{ event.when }} {{ event.what }} {{ event.where }}
             </p>
           </div>
-          <div class="event-details">
+          <div class="event-details" v-if="event.status">
             <div>
               <img
                 src="../assets/images/fss-demo-main-400x300.jpg"
-                alt="demo"
+                alt="event location"
               />
             </div>
-            <div>
+            <div class="details">
               <h5>sfesf</h5>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -70,6 +73,34 @@ export default {
         span {
           margin-right: 1rem;
           cursor: pointer;
+        }
+      }
+      .event-details {
+        background-color: $main-bg2;
+        padding: 1rem;
+        display: flex;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+
+        .details {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-between;
+
+          button {
+            @include btn;
+            background-color: $secondary-color1;
+            border: none;
+
+            &:active {
+              opacity: 80%;
+            }
+          }
         }
       }
     }
