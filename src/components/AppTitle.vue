@@ -41,6 +41,7 @@ export default {
     width: 35%;
     margin: 0 auto;
     margin-bottom: 1rem;
+    border-color: $font-color1;
   }
 
   & > * {

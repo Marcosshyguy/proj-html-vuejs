@@ -4,6 +4,8 @@ import AppHeader from "./components/AppHeader.vue";
 import AppGridBandNews from "./components/AppGridBandNews.vue";
 import AppFirstSection from "./components/AppFirstSection.vue";
 import AppVideoThumbSectionVue from "./components/AppVideoThumbSection.vue";
+import AppFooter from "./components/AppFooter.vue";
+import AppLiveDatesSection from "./components/AppLiveDatesSection.vue";
 export default {
   data() {
     return {
@@ -62,6 +64,33 @@ export default {
           image: "blog_flavor_rock-400x200.jpg",
         },
       ],
+      liveDatesArray: [
+        {
+          when: "17/08/2020",
+          where: "Analakia, Gerogia",
+          what: "Gem Festival 2020",
+        },
+        {
+          when: "24/9/2020",
+          where: "Dominical Republic",
+          what: "Groovefest",
+        },
+        {
+          when: "31/10/2020",
+          where: "Marrakech, Morocco",
+          what: "Oasis Festival 2020",
+        },
+        {
+          when: "07/11/2020",
+          where: "Essauria, Morocco",
+          what: "Moga Festival -",
+        },
+        {
+          when: "10/12/2020",
+          where: "Uvita, Costa Rica",
+          what: "Envision Festival -",
+        },
+      ],
     };
   },
   components: {
@@ -69,6 +98,8 @@ export default {
     AppGridBandNews,
     AppFirstSection,
     AppVideoThumbSectionVue,
+    AppFooter,
+    AppLiveDatesSection,
   },
   methods: {},
   props: {},
@@ -91,10 +122,13 @@ NEED TO ASK IF THE RED BAR HAS TO SHOW MORE DATES-->
     <AppFirstSection />
     <AppGridBandNews :newses="newsArray" />
     <AppVideoThumbSectionVue />
+    <AppLiveDatesSection :eventsList="liveDatesArray" />
   </main>
 
   <!-- it seems a normal footer but with the same links of the header -->
-  <footer></footer>
+  <footer>
+    <AppFooter />
+  </footer>
 </template>
 
 <style lang="scss">
