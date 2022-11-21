@@ -70,35 +70,35 @@ export default {
           where: "Analakia, Gerogia",
           what: "Gem Festival 2020",
           status: false,
-          book: "notBooked",
+          booking: "notBooked",
         },
         {
           when: "24/9/2020",
           where: "Dominical Republic",
           what: "Groovefest",
           status: false,
-          book: "notBooked",
+          booking: "notBooked",
         },
         {
           when: "31/10/2020",
           where: "Marrakech, Morocco",
           what: "Oasis Festival 2020",
           status: false,
-          book: "notBooked",
+          booking: "notBooked",
         },
         {
           when: "07/11/2020",
           where: "Essauria, Morocco",
           what: "Moga Festival -",
           status: false,
-          book: "notBooked",
+          booking: "notBooked",
         },
         {
           when: "10/12/2020",
           where: "Uvita, Costa Rica",
           what: "Envision Festival -",
           status: false,
-          book: "notBooked",
+          booking: "notBooked",
         },
       ],
       currentListPosition: 0,
@@ -119,6 +119,15 @@ export default {
       this.currentListPosition = index;
       let currentlistItem = this.liveDatesArray[this.currentListPosition];
       currentlistItem.status = !currentlistItem.status;
+    },
+    bookEvents(index) {
+      this.currentListPosition = index;
+      let reservation = this.liveDatesArray[this.currentListPosition];
+      if (reservation.booking === "notBooked") {
+        reservation.booking = "booked";
+      } else {
+        reservation.booking = "notBooked";
+      }
     },
   },
   props: {},
@@ -144,6 +153,7 @@ NEED TO ASK IF THE RED BAR HAS TO SHOW MORE DATES-->
     <AppLiveDatesSection
       :eventsList="liveDatesArray"
       @displayEvent="showEvents"
+      @booking="bookEvents"
     />
   </main>
 

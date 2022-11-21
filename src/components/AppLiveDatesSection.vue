@@ -25,8 +25,8 @@ export default {
           <div class="event" @click="$emit('displayEvent', eventIndex)">
             <!-- ricordarsi di toglieree span -->
             <p>
-              <span>+</span>
-              <span>-</span>
+              <span v-if="!event.status">+</span>
+              <span v-else>-</span>
 
               {{ event.when }} {{ event.what }} {{ event.where }}
             </p>
@@ -46,7 +46,10 @@ export default {
                 consectetur voluptatibus dolorum nulla necessitatibus vel quia
                 illum, officiis sit odit nesciunt fugit amet quis.
               </p>
-              <button>Book Now</button>
+              <button @click="$emit('booking', eventIndex)">
+                <span v-if="event.booking === 'notBooked'">Book now!</span
+                ><span v-else>Cancel</span>
+              </button>
             </div>
           </div>
         </div>
