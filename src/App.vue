@@ -48,7 +48,7 @@ export default {
 <template>
   <!-- transparent header with a jumbo below it and an effect on the button on the right taht displays  a menu with several links -->
   <header>
-    <AppHeader />
+    <AppHeader :linkList="linksArray" />
   </header>
 
   <!-- 1first of all a normal section, 2second a grid that shows latest newa some and an hover effect on them 

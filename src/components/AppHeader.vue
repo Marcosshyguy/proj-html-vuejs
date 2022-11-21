@@ -1,10 +1,7 @@
 <script>
-import { store } from "../store";
-
 export default {
   data() {
     return {
-      store,
       openedMenu: false,
       currentBtnPosition: 0,
       jumboButtons: [
@@ -27,7 +24,7 @@ export default {
     },
   },
   props: {
-    // linkList: Object,
+    linkList: Array,
   },
   computed: {},
   created() {},
@@ -71,7 +68,7 @@ export default {
       <!-- menu list that is activated by the humburger menu icon in the header -->
       <div class="jumbo-menu" v-if="openedMenu" @click="changeMenuStatus">
         <ul>
-          <li v-for="(link, indexLink) in store.linksArray" :key="indexLink">
+          <li v-for="(link, indexLink) in linkList" :key="indexLink">
             {{ link.name }}
           </li>
         </ul>
