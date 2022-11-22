@@ -151,5 +151,9 @@ export default {
 }
 .show-more {
   @include btnLarge;
+
+  &:hover {
+    @include btnLargeHover;
+  }
 }
 </style>
