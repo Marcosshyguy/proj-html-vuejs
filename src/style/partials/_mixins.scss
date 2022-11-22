@@ -1,3 +1,4 @@
+@use "./variables" as *;
 @mixin btn {
     color :white;
     text-transform: uppercase;
@@ -9,6 +10,30 @@
     border: 1px solid white;
     border-radius: 2px;
     cursor: pointer;
+}
+
+@mixin btnLarge {
+    height: $hedaer-height;
+    width: 100%;
+    color :white;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .8rem;
+    letter-spacing: 0.1rem;
+    background-color:$secondary-color1;
+    cursor: pointer;
+    
+    text-align: center;
+    vertical-align: middle;
+    line-height: $hedaer-height;
+
+    transition: all 1s;
+
+}
+
+@mixin btnLargeHover{
+    background-color: white;
+    color:black
 }
 
 @mixin center-positioning{

@@ -71,6 +71,9 @@ export default {
       </div> -->
     </div>
   </div>
+  <div class="show-more">
+    <a>View all Latest Dates</a>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -79,6 +82,7 @@ export default {
 // grid methods
 .wrapper {
   background-color: $main-bg1;
+  position: relative;
   .grid {
     height: 90vh;
     margin-top: 3em;
@@ -224,6 +228,14 @@ export default {
         opacity: 1;
       }
     }
+  }
+}
+// large button t the end of the section
+.show-more {
+  @include btnLarge;
+
+  &:hover {
+    @include btnLargeHover;
   }
 }
 // flexbox methods

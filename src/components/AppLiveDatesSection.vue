@@ -56,6 +56,9 @@ export default {
       </div>
     </div>
   </div>
+  <div class="show-more">
+    <a>View all Latest Dates</a>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -145,5 +148,8 @@ export default {
       }
     }
   }
+}
+.show-more {
+  @include btnLarge;
 }
 </style>
