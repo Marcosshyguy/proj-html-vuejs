@@ -45,6 +45,11 @@ export default {
   background-position: bottom;
   background-size: 2000px 700px;
   background-repeat: repeat-y;
+  transition: all 2s;
+
+  &:hover {
+    background-position: top;
+  }
   div {
     @include center-positioning;
     text-align: center;
