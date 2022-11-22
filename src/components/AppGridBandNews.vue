@@ -165,7 +165,7 @@ export default {
             right: 0;
             left: 0;
             bottom: 0;
-            transition: opacity 2s;
+            transition: opacity 1.5s;
           }
 
           p {
@@ -176,7 +176,7 @@ export default {
             font-size: 1rem;
             opacity: 0;
             z-index: 1;
-            transition: opacity 3s;
+            transition: opacity 2s;
           }
         }
 
@@ -184,7 +184,7 @@ export default {
           height: 35%;
           padding: 0.4rem 0.6rem;
           background-color: $main-bg2;
-          transition: all 2s;
+          transition: all 1s;
 
           h5 {
             color: $secondary-color1;

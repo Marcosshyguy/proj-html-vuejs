@@ -23,12 +23,14 @@ export default {
           :key="eventIndex"
         >
           <div class="event" @click="$emit('displayEvent', eventIndex)">
-            <!-- ricordarsi di toglieree span -->
             <p>
               <span v-if="!event.status">+</span>
               <span v-else :class="event.status ? 'show' : ''">-</span>
 
               {{ event.when }} {{ event.what }} {{ event.where }}
+              <span class="booked" v-if="event.booking !== 'booked'"
+                >Booked</span
+              >
             </p>
           </div>
           <div class="event-details" v-if="event.status">
@@ -75,6 +77,9 @@ export default {
       .event {
         padding: 1rem;
         background-color: $main-bg2;
+        // display: flex;
+        // align-items: center;
+        // justify-content: space-between;
         cursor: pointer;
 
         p {

@@ -211,6 +211,10 @@ footer {
     position: absolute;
     bottom: 3px;
     left: 80%;
+
+    &:hover {
+      opacity: 75%;
+    }
   }
 }
 </style>
