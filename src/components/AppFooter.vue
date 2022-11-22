@@ -91,7 +91,7 @@ export default {
 
   p {
     color: $font-color2;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   a {

@@ -179,17 +179,38 @@ NEED TO ASK IF THE RED BAR HAS TO SHOW MORE DATES-->
   <!-- it seems a normal footer but with the same links of the header -->
   <footer>
     <AppFooter :linkList="linksArray" @selectionFooter="changeLink" />
-    <a href="#header">dvdgv</a>
+    <a href="#header" class="scroll-up"
+      ><i class="fa-solid fa-chevron-up"></i
+    ></a>
   </footer>
 </template>
 
 <style lang="scss">
 @use "./style/general.scss" as *;
+@use "./style/partials/variables" as *;
 
 header,
 main,
 footer {
   width: 100%;
-  // max-width: 2000px;
+  max-width: 2000px;
+}
+
+footer {
+  position: relative;
+
+  .scroll-up {
+    display: inline-block;
+    height: 2.3rem;
+    width: 2.3rem;
+    background-color: $main-bg2;
+    line-height: 2.3rem;
+    text-align: center;
+    margin-right: 1rem;
+
+    position: absolute;
+    bottom: 3px;
+    left: 80%;
+  }
 }
 </style>
