@@ -26,7 +26,7 @@ export default {
             <!-- ricordarsi di toglieree span -->
             <p>
               <span v-if="!event.status">+</span>
-              <span v-else>-</span>
+              <span v-else :class="event.status ? 'show' : ''">-</span>
 
               {{ event.when }} {{ event.what }} {{ event.where }}
             </p>
@@ -39,7 +39,7 @@ export default {
               />
             </div>
             <div class="details">
-              <h5>sfesf</h5>
+              <h4>{{ event.what }}</h4>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Deleniti voluptatem enim voluptas, praesentium dolores ut
@@ -72,21 +72,46 @@ export default {
       .event {
         padding: 1rem;
         background-color: $main-bg2;
+        cursor: pointer;
+
+        p {
+          color: $secondary-color1;
+          text-transform: uppercase;
+          font-family: "Montserrat", sans-serif;
+          font-size: 1rem;
+        }
 
         span {
+          font-size: 1.5rem;
+          color: white;
+          display: inline-block;
+          width: 1.5rem;
+          height: 1.5rem;
+          line-height: 1.5rem;
+          vertical-align: middle;
+          text-align: center;
           margin-right: 1rem;
-          cursor: pointer;
+
+          &.show {
+            background-color: $secondary-color1;
+          }
         }
       }
+
       .event-details {
         background-color: $main-bg2;
         padding: 1rem;
         display: flex;
+        // height: 200px;
 
-        img {
-          object-fit: cover;
-          width: 100%;
-          height: 100%;
+        div {
+          margin-right: 3em;
+
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
         }
 
         .details {
@@ -95,13 +120,25 @@ export default {
           align-items: flex-start;
           justify-content: space-between;
 
+          h4 {
+            font-weight: normal;
+            letter-spacing: 0.1rem;
+            margin-bottom: 0.5rem;
+          }
+
+          p {
+            line-height: 1.3rem;
+          }
+
           button {
             @include btn;
             background-color: $secondary-color1;
             border: none;
+            margin-top: 1rem;
+            padding: 0.5rem 1em;
 
             &:active {
-              opacity: 80%;
+              opacity: 50%;
             }
           }
         }

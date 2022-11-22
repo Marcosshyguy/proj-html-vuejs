@@ -185,6 +185,8 @@ export default {
           height: 35%;
           padding: 0.4rem 0.6rem;
           background-color: $main-bg2;
+          display: flex;
+          flex-directio
           transition: all 2s;
 
           h5 {

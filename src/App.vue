@@ -4,8 +4,8 @@ import AppHeader from "./components/AppHeader.vue";
 import AppGridBandNews from "./components/AppGridBandNews.vue";
 import AppFirstSection from "./components/AppFirstSection.vue";
 import AppVideoThumbSectionVue from "./components/AppVideoThumbSection.vue";
-import AppFooter from "./components/AppFooter.vue";
 import AppLiveDatesSection from "./components/AppLiveDatesSection.vue";
+import AppFooter from "./components/AppFooter.vue";
 export default {
   data() {
     return {
@@ -67,7 +67,7 @@ export default {
       liveDatesArray: [
         {
           when: "17/08/2020",
-          where: "Analakia, Gerogia",
+          where: "Analakia, Georgia",
           what: "Gem Festival 2020",
           status: false,
           booking: "notBooked",
@@ -88,15 +88,15 @@ export default {
         },
         {
           when: "07/11/2020",
-          where: "Essauria, Morocco",
-          what: "Moga Festival -",
+          where: "- Essauria, Morocco",
+          what: "Moga Festival",
           status: false,
           booking: "notBooked",
         },
         {
           when: "10/12/2020",
-          where: "Uvita, Costa Rica",
-          what: "Envision Festival -",
+          where: "- Uvita, Costa Rica",
+          what: "Envision Festival ",
           status: false,
           booking: "notBooked",
         },
@@ -120,6 +120,8 @@ export default {
       let currentlistItem = this.liveDatesArray[this.currentListPosition];
       currentlistItem.status = !currentlistItem.status;
     },
+    // use this methods to manage the booking status according the emit button position
+    // $emit from AppLiveDatesSection
     bookEvents(index) {
       this.currentListPosition = index;
       let reservation = this.liveDatesArray[this.currentListPosition];

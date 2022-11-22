@@ -38,6 +38,7 @@ export default {
 
 .thumb {
   height: 800px;
+  width: 100%;
   position: relative;
   background-color: aqua;
   background-image: url("../assets/images/home-testimonial-parallax.jpg");

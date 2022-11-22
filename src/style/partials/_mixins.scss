@@ -4,6 +4,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: .8rem;
     padding: .7rem 1.3em;
+    letter-spacing: 0.1rem;
     background-color: transparent;
     border: 1px solid white;
     border-radius: 2px;
@@ -18,7 +19,7 @@
 }
 
 @mixin aforism {
-    font-size: .9rem;
+    font-size: 1rem;
     font-weight: 700;
     width: 80%;
     margin: 0 auto;
