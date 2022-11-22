@@ -49,7 +49,7 @@ export default {
 
     <!-- jumbotron -->
     <div class="jumbotron">
-      <img src="../assets/images/home_slider.jpg" alt="home-slider" />
+      <!-- <img src="../assets/images/home_slider.jpg" alt="home-slider" /> -->
       <div class="jumbo-title">
         <h1>Untold Stories</h1>
         <p><em>There is an untold story behind every favourite song</em></p>
@@ -88,6 +88,10 @@ export default {
 .header-container {
   width: 100%;
   position: relative;
+
+  &:hover .jumbotron {
+    background-position: center;
+  }
   .header-navbar {
     width: 100%;
     height: $hedaer-height;
@@ -114,15 +118,20 @@ export default {
   .jumbotron {
     height: 800px;
     position: relative;
+    background-image: url(../assets/images/home_slider.jpg);
+    background-size: cover;
+    background-position: bottom;
+    transition: all 2s;
+
     p {
       @include aforism;
     }
 
-    img {
-      object-fit: fill;
-      object-position: top;
-      height: 100%;
-    }
+    // img {
+    //   object-fit: fill;
+    //   object-position: top;
+    //   height: 100%;
+    // }
     .jumbo-title {
       width: 100%;
       text-align: center;
@@ -136,7 +145,7 @@ export default {
       button {
         @include btn;
         margin-right: 1em;
-        transition: 0.5s all ease-in-out;
+        transition: 300ms all ease-in-out;
 
         &.active {
           background-color: $secondary-color1;
@@ -147,10 +156,6 @@ export default {
           background-color: white;
           color: black;
           border: 1px solid black;
-        }
-
-        &:active {
-          opacity: 90%;
         }
       }
     }
