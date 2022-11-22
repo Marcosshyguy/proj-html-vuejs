@@ -28,7 +28,7 @@ export default {
               <span v-else :class="event.status ? 'show' : ''">-</span>
 
               {{ event.when }} {{ event.what }} {{ event.where }}
-              <span class="booked" v-if="event.booking !== 'booked'"
+              <span class="booked" v-if="event.booking !== 'notBooked'"
                 >Booked</span
               >
             </p>

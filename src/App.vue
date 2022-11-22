@@ -101,6 +101,7 @@ export default {
           booking: "notBooked",
         },
       ],
+
       currentListPosition: 0,
       currentLinkPosition: 0,
     };

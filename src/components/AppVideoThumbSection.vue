@@ -5,13 +5,34 @@ export default {
   data() {
     return {
       store,
+      sentence: [
+        "I just listened to it and said to myself, 'Man I really love this album'. Still, today, it just sounds so fresh. It sounds full of ideas. These guys knew what they were doing. They're good. And they're iventive. I haven't heard anything this year that's as inventive. I don't really expect to'.",
+        "i'm blu dabudi dabuda",
+        "Is a long way to the top if you wanna rock and roll",
+      ],
+      currentPosition: 0,
+      interval: null,
     };
   },
   components: {},
-  methods: {},
+  methods: {
+    autoPlay() {
+      if (this.interval === null) {
+        this.interval = setInterval(() => {
+          if (this.currentPosition < this.sentence.length - 1) {
+            this.currentPosition++;
+          } else {
+            this.currentPosition = 0;
+          }
+        }, 4000);
+      }
+    },
+  },
   props: {},
   computed: {},
-  created() {},
+  created() {
+    this.autoPlay();
+  },
 };
 </script>
 
@@ -19,13 +40,7 @@ export default {
   <div class="thumb">
     <div>
       <p>
-        <em
-          >&quot;I just listened to it and said to myself, &quot;Man I really
-          love this album&quot;. Still, today, it just sounds so fresh. It
-          sounds full of ideas. These guys knew what they were doing. They're
-          good. And they're iventive. I haven't heard anything this year that's
-          as inventive. I don't really expect to&quot;.</em
-        >
+        <em>{{ sentence[currentPosition] }}</em>
       </p>
       <img src="../assets/images/band_interview_play_icon.png" alt="" />
     </div>
@@ -59,7 +74,7 @@ export default {
     }
 
     img {
-      width: 7%;
+      width: 60px;
       margin-top: 2em;
       cursor: pointer;
 
