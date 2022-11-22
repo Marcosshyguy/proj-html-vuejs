@@ -57,6 +57,10 @@ export default {
       &.selected {
         color: white;
       }
+
+      &:hover {
+        opacity: 75%;
+      }
     }
   }
 }

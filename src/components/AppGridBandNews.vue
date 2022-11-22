@@ -155,11 +155,6 @@ export default {
           justify-content: center;
           align-items: center;
           position: relative;
-
-          p {
-            text-align: center;
-          }
-
           &::before {
             content: "";
             display: block;
@@ -175,9 +170,10 @@ export default {
 
           p {
             color: white;
+            text-align: center;
             letter-spacing: 1px;
             font-family: "Montserrat", sans-serif;
-            font-size: 0.8rem;
+            font-size: 1rem;
             opacity: 0;
             z-index: 1;
             transition: opacity 3s;
@@ -205,13 +201,14 @@ export default {
         &:nth-child(4),
         &:nth-child(5) {
           .image {
-            height: 75%;
+            height: 80%;
           }
           .description {
-            height: 25%;
+            height: 20%;
           }
         }
       }
+      // hover that scroll down the description section
       &:hover .description {
         height: 0%;
       }
@@ -230,7 +227,7 @@ export default {
     }
   }
 }
-// large button t the end of the section
+// large button at the end of the section
 .show-more {
   @include btnLarge;
 
@@ -238,71 +235,4 @@ export default {
     @include btnLargeHover;
   }
 }
-// flexbox methods
-// .grid {
-//   height: 90vh;
-//   width: 100%;
-//   display: flex;
-//   margin: 0 auto;
-//   gap: 1em;
-
-//   //   leftside
-//   .grid-left-side {
-//     height: 100%;
-//     width: 66%;
-//     display: flex;
-//     flex-direction: column;
-
-//     gap: 1em;
-
-//     .card:first-child,
-//     .card:last-child {
-//       height: calc(100% / 4 - 1em);
-//       border: 1px solid black;
-
-//       img {
-//         width: 100%;
-//         height: 100%;
-//         object-fit: cover;
-//       }
-//     }
-
-//     .card-flex {
-//       flex-grow: 1;
-//       border: 1px solid black;
-//       display: flex;
-//       gap: 1em;
-//       .card {
-//         width: calc(100% / 2);
-//         height: 100%;
-
-//         img {
-//           width: 100%;
-//           height: 100%;
-//           object-fit: cover;
-//         }
-//       }
-//     }
-//   }
-//   //   right-side
-//   .grid-right-side {
-//     border: 1px solid black;
-//     height: 100%;
-//     width: 33%;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 1em;
-
-//     .card {
-//       height: calc(100% / 2);
-//       border: 1px solid black;
-
-//       img {
-//         width: 100%;
-//         height: 100%;
-//         object-fit: cover;
-//       }
-//     }
-//   }
-// }
 </style>

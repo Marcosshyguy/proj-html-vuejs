@@ -126,12 +126,6 @@ export default {
     p {
       @include aforism;
     }
-
-    // img {
-    //   object-fit: fill;
-    //   object-position: top;
-    //   height: 100%;
-    // }
     .jumbo-title {
       width: 100%;
       text-align: center;
@@ -187,6 +181,10 @@ export default {
 
           &.selected {
             color: white;
+          }
+
+          &:hover {
+            transform: scale(1.1);
           }
         }
       }
