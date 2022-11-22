@@ -172,7 +172,6 @@ export default {
           p {
             color: white;
             letter-spacing: 1px;
-            text-transform: uppercase;
             font-family: "Montserrat", sans-serif;
             font-size: 0.8rem;
             opacity: 0;
@@ -185,8 +184,6 @@ export default {
           height: 35%;
           padding: 0.4rem 0.6rem;
           background-color: $main-bg2;
-          display: flex;
-          flex-direction: column;
           transition: all 2s;
 
           h5 {

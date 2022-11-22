@@ -36,7 +36,7 @@ export default {
     <!-- fixed navbar -->
     <div class="header-navbar">
       <div>
-        <img src="../assets/images/logo_footer.png" alt="avda logo" />
+        <img src="../assets/images/logo_footer.png" alt="avada logo" />
       </div>
       <!-- humburger menu icon -->
       <span v-if="!openedMenu"
@@ -68,8 +68,13 @@ export default {
       <!-- menu list that is activated by the humburger menu icon in the header -->
       <div class="jumbo-menu" v-if="openedMenu" @click="changeMenuStatus">
         <ul>
-          <li v-for="(link, indexLink) in linkList" :key="indexLink">
-            {{ link.name }}
+          <li
+            v-for="(link, index) in linkList"
+            :key="index"
+            :class="link.status ? 'selected' : ''"
+            @click="$emit('selectionHedaer', index)"
+          >
+            <a @click="$emit('selection', index)">{{ link.name }}</a>
           </li>
         </ul>
       </div>
@@ -86,7 +91,7 @@ export default {
   .header-navbar {
     width: 100%;
     height: $hedaer-height;
-    padding: 0 1em;
+    padding: 0 2em;
 
     display: flex;
     justify-content: space-between;
@@ -169,8 +174,15 @@ export default {
 
         li {
           font-family: "Montserrat", sans-serif;
+          font-size: 1.5rem;
+          color: $font-color1;
           margin-bottom: 2rem;
           text-align: center;
+          cursor: pointer;
+
+          &.selected {
+            color: white;
+          }
         }
       }
     }

@@ -102,6 +102,7 @@ export default {
         },
       ],
       currentListPosition: 0,
+      currentLinkPosition: 0,
     };
   },
   components: {
@@ -131,6 +132,13 @@ export default {
         reservation.booking = "notBooked";
       }
     },
+    // this methods manage the position of the selected link of the footer and the header
+    // $emit from AppHedaer App Footer
+    changeLink(index) {
+      this.linksArray[this.currentLinkPosition].status = false;
+      this.currentLinkPosition = index;
+      this.linksArray[this.currentLinkPosition].status = true;
+    },
   },
   props: {},
   computed: {},
@@ -141,7 +149,7 @@ export default {
 <template>
   <!-- transparent header with a jumbo below it and an effect on the button on the right taht displays  a menu with several links -->
   <header>
-    <AppHeader :linkList="linksArray" />
+    <AppHeader :linkList="linksArray" @selectionHedaer="changeLink" />
   </header>
 
   <!-- 1first of all a normal section, 2second a grid that shows latest newa some and an hover effect on them 
@@ -161,7 +169,7 @@ NEED TO ASK IF THE RED BAR HAS TO SHOW MORE DATES-->
 
   <!-- it seems a normal footer but with the same links of the header -->
   <footer>
-    <AppFooter />
+    <AppFooter :linkList="linksArray" @selectionFooter="changeLink" />
   </footer>
 </template>
 
