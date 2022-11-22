@@ -34,7 +34,7 @@ export default {
       ],
       newsArray: [
         {
-          title: "Tecnology and Music",
+          title: "Tecnology and music",
           text: "loremlorem lorem loem",
           image: "blog_music_techo-400x200.jpg",
         },
@@ -55,7 +55,7 @@ export default {
         },
         {
           title: "Sharing the stage with legend",
-          text: "loremlorem lorem loem loremlorem loloremlorem lo",
+          text: "loremlorem lorem loem loremlorem loloremlorem lorem lore",
           image: "blog-post2-400x600.jpg",
         },
         {
@@ -139,6 +139,11 @@ export default {
       this.currentLinkPosition = index;
       this.linksArray[this.currentLinkPosition].status = true;
     },
+    // scrollTo(){
+    //   scrollTo
+    // }
+
+    // }
   },
   props: {},
   computed: {},
@@ -149,7 +154,11 @@ export default {
 <template>
   <!-- transparent header with a jumbo below it and an effect on the button on the right taht displays  a menu with several links -->
   <header>
-    <AppHeader :linkList="linksArray" @selectionHedaer="changeLink" />
+    <AppHeader
+      :linkList="linksArray"
+      @selectionHedaer="changeLink"
+      id="header"
+    />
   </header>
 
   <!-- 1first of all a normal section, 2second a grid that shows latest newa some and an hover effect on them 
@@ -170,6 +179,7 @@ NEED TO ASK IF THE RED BAR HAS TO SHOW MORE DATES-->
   <!-- it seems a normal footer but with the same links of the header -->
   <footer>
     <AppFooter :linkList="linksArray" @selectionFooter="changeLink" />
+    <a href="#header">dvdgv</a>
   </footer>
 </template>
 

@@ -65,7 +65,7 @@ export default {
     gap: 1.5em;
 
     li {
-      color: $font-color1;
+      color: $font-color2;
       cursor: pointer;
 
       &.selected {
@@ -79,7 +79,7 @@ export default {
   }
 }
 .footer-credits {
-  color: $font-color1;
+  color: $font-color2;
   background-color: $main-bg1;
   width: 100%;
   height: $footer-credits;
@@ -88,6 +88,11 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  p {
+    color: $font-color2;
+    font-size: 0.7rem;
+  }
 
   a {
     display: inline-block;
