@@ -186,7 +186,7 @@ export default {
           padding: 0.4rem 0.6rem;
           background-color: $main-bg2;
           display: flex;
-          flex-directio
+          flex-direction: column;
           transition: all 2s;
 
           h5 {
